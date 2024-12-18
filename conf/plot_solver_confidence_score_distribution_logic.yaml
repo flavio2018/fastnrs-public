@@ -1,0 +1,23 @@
+defaults:
+        - task: test
+        - model: encselsolcom
+        - data: logic_solve_atomic
+        - data@selsolcom_data: logic_solve
+        - data@solver_data: logic_solve_atomic
+        - data@selector_data: logic_textseg
+        - override hydra/hydra_logging: none
+        - override hydra/job_logging: custom
+        - _self_
+
+hydra:
+  run:
+    dir: ../hydra/logs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
+
+name: plot_solver_confidence_score_distribution_logic
+wandb_proj: itersolv
+wandb_name: null
+wandb_disabled: true
+tags: null
+notes: null
+start_timestamp: ${now:%Y-%m-%d_%H-%M}
+device: 'cuda'

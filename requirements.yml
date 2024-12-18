@@ -1,0 +1,21 @@
+name: itersolv
+channels:
+        - conda-forge
+        - defaults
+dependencies:
+        - black
+        - hydra-core
+        - ipython  # local-only
+        - ipykernel  # local-only
+        - ipywidgets  # local-only
+        - notebook  # local-only
+        - ipdb
+        - numpy
+        - openai
+        - pandas
+        - python 3.10.6 
+        - seaborn
+        - scikit-learn
+        - scipy
+        - tqdm  # local-only
+        - wandb

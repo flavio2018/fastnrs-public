@@ -1,0 +1,50 @@
+program: main.py
+method: grid
+metric:
+  name: valid_ood/char_acc
+  goal: maximize
+parameters:
+  wandb_name:
+    value: d512_enc${.model.num_layers_enc}_dec${.model.num_layers_dec}_m2_cycliclr_dr${.model.dropout}
+  task.max_iter:
+    value: 50000
+  task.use_early_stop:
+    value: false
+  task.lr:
+    value: 1e-6
+  task.lr_scheduler:
+    value: cyclic
+  task.cyclic_scheduler_max_lr:
+    value: 6e-5
+  task.cyclic_scheduler_step_up:
+    value: 1500
+  model.label_pe_enc:
+    value: true
+  model.dropout:
+    values:
+      - 0.1
+      - 0.3
+      - 0.5
+  model.d_model:
+    value: 512
+  model.ff_mul:
+    value: 4
+  model.num_heads:
+    value: 4
+  model.num_layers_enc:
+    values:
+      - 1 
+      - 2
+      - 4
+  model.num_layers_dec:
+    values:
+      - 2
+      - 4
+  model.diag_mask_width_above:
+    value: 2
+command:
+  - ${env}
+  - python
+  - ${program}
+  - "--config-name=train_transformer_listops_select"
+  - ${args_no_hyphens}

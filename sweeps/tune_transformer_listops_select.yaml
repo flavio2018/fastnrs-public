@@ -1,0 +1,60 @@
+program: main.py
+method: bayes
+metric:
+  name: valid_ood/char_acc
+  goal: maximize
+parameters:
+  task.early_stop_metric:
+    value: valid_ood/char_acc
+  task.early_stop_patience:
+    value: 10
+  task.lr:
+    min: 0.000000001
+    max: 0.0001
+  model.label_pe_enc:
+    value: true
+  model.dropout:
+    min: 0.0
+    max: 0.5
+  model.d_model:
+    values:
+      - 128
+      - 256
+      - 512
+  model.ff_mul:
+    values:
+      - 1
+      - 2
+      - 4
+  model.num_heads:
+    values:
+      - 1
+      - 2
+      - 4
+      - 8
+  model.num_layers_enc:
+    values:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  model.num_layers_dec:
+    values:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  model.diag_mask_width_above:
+    values:
+      - 2
+      - 3
+command:
+  - ${env}
+  - python
+  - ${program}
+  - "--config-name=train_transformer_listops_select"
+  - ${args_no_hyphens}

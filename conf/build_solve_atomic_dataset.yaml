@@ -1,0 +1,59 @@
+defaults:
+        - override hydra/hydra_logging: none
+        - override hydra/job_logging: none
+        - _self_
+
+dataset_name: ''
+num_train_samples:
+  algebra: 0.8
+  arithmetic: 0.8
+  listops: 0.8
+  logic: 0.8
+num_valid_samples: 
+  algebra: 0.2
+  arithmetic: 0.2
+  listops: 0.2
+  logic: 0.2
+max_samples_per_split:
+  algebra: 20000
+  arithmetic: null
+  listops: null
+  logic: null
+easy: false
+task: 'solve_atomic'
+variant_name: ''
+max_range: 5000
+
+algebra:
+  mini_steps: false
+  modulo: 100
+  variables: 'xy'
+  coeff_variables: 'ab'
+  difficulty_splits:
+    - [1, 1]
+    - [1, 2]
+
+arithmetic:
+  mini_steps: true
+  modulo: 100
+  min_operand_value: -99
+  max_operand_value: 99
+  operators: '+-*'
+  difficulty_splits:
+    - [1, 1]
+    - [1, 2]
+
+listops:
+  mini_steps: false
+  simplify_last: true
+  ops: 'ias'
+  difficulty_splits:
+    - [1, 1]
+    - [1, 2]
+    - [1, 3]
+    - [1, 4]
+
+logic:
+  difficulty_splits:
+    - [0, 2]
+    - [1, 2]

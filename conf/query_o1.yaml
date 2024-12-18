@@ -1,0 +1,7 @@
+batch_from: 0
+bs: 0
+task_name: ''
+nesting: 6
+n_operands: 2
+prompt_type: 'vanilla'
+model_name: 'o1-mini'
