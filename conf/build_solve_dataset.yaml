@@ -1,0 +1,106 @@
+dataset_name: ''
+balanced: true
+num_train_samples: 400000
+num_valid_samples: 1000
+easy: false
+task: 'solve'
+
+algebra:
+  mini_steps: false
+  modulo: 100
+  variables: 'xy'
+  coeff_variables: 'ab'
+  splits:
+    train:
+      - [1, 1]
+      - [1, 2]
+      - [2, 2]
+      - [2, 3]
+    valid_iid:
+      - [1, 1]
+      - [1, 2]
+      - [2, 2]
+      - [2, 3]
+    valid_ood:
+      - [2, 4]
+      - [3, 2]
+      - [3, 3]
+      - [3, 4]
+      - [4, 2]
+      - [4, 3]
+      - [4, 4]
+    test:
+      - [1, 2]
+      - [2, 2]
+      - [2, 3]
+      - [2, 4]
+      - [3, 2]
+      - [3, 3]
+      - [3, 4]
+      - [4, 2]
+      - [4, 3]
+      - [4, 4]
+
+arithmetic:
+  mini_steps: false
+  modulo: 100
+  min_operand_value: -99
+  max_operand_value: 99
+  operators: '+-*'
+  splits:
+    train:
+      - [1, 1]
+      - [1, 2]
+      - [2, 2]
+      - [3, 2]
+    valid_iid:
+      - [1, 1]
+      - [1, 2]
+      - [2, 2]
+      - [3, 2]
+    valid_ood:
+      - [4, 2]
+      - [5, 2]
+      - [6, 2]
+    test:
+      - [1, 2]
+      - [2, 2]
+      - [3, 2]
+      - [4, 2]
+      - [5, 2]
+      - [6, 2]
+
+listops:
+  mini_steps: false
+  simplify_last: true
+  ops: 'ias'
+  splits:
+    train:
+      - [1, 1]
+      - [1, 2]
+      - [2, 2]
+      - [2, 3]
+    valid_iid:
+      - [1, 1]
+      - [1, 2]
+      - [2, 2]
+      - [2, 3]
+    valid_ood:
+      - [2, 4]
+      - [3, 2]
+      - [3, 3]
+      - [3, 4]
+      - [4, 2]
+      - [4, 3]
+      - [4, 4]
+    test:
+      - [1, 2]
+      - [2, 2]
+      - [2, 3]
+      - [2, 4]
+      - [3, 2]
+      - [3, 3]
+      - [3, 4]
+      - [4, 2]
+      - [4, 3]
+      - [4, 4]

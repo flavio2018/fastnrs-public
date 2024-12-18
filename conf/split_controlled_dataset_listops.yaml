@@ -1,0 +1,178 @@
+defaults:
+        - override hydra/hydra_logging: none
+        - override hydra/job_logging: none
+        - _self_
+
+dataset_name: 'listops'
+max_ood_samples_per_split: 20
+splits:
+  (1, 1, 'no'):
+    train: 8
+    valid_iid: 2
+    valid_ood: 0
+    test: 0
+  (1, 2, 'no'):
+    train: 237
+    valid_iid: 30
+    valid_ood: 0
+    test: 33
+  (1, 3, 'no'):
+    train: 2864
+    valid_iid: 100
+    valid_ood: 0
+    test: 33
+  (1, 4, 'no'):
+    train: 29829
+    valid_iid: 100
+    valid_ood: 0
+    test: 34
+  (2, 2, 'no'):
+    train: 39800
+    valid_iid: 100
+    valid_ood: 0
+    test: 33
+  (2, 3, 'no'):
+    train: 39800
+    valid_iid: 100
+    valid_ood: 0
+    test: 33
+  (2, 4, 'no'):
+    train: 39800
+    valid_iid: 100
+    valid_ood: 0
+    test: 34
+  (2, 2, 's1'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 33
+  (2, 3, 's1'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 33
+  (2, 4, 's1'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 2, 'no'):
+    train: 39800
+    valid_iid: 100
+    valid_ood: 0
+    test: 33
+  (3, 3, 'no'):
+    train: 39800
+    valid_iid: 100
+    valid_ood: 0
+    test: 33
+  (3, 4, 'no'):
+    train: 39800
+    valid_iid: 100
+    valid_ood: 0
+    test: 34
+  (3, 2, 's1'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 3, 's1'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 4, 's1'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 2, 's2'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 3, 's2'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 4, 's2'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 2, 's3'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 3, 's3'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 4, 's3'):
+    train: 39800
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 2, 's4'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 3, 's4'):
+    train: 39900
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (3, 4, 's4'):
+    train: 39800
+    valid_iid: 100
+    valid_ood: 0
+    test: 0
+  (4, 2, 'no'):
+    train: 0
+    valid_iid: 0
+    valid_ood: 100
+    test: 33
+  (4, 3, 'no'):
+    train: 0
+    valid_iid: 0
+    valid_ood: 100
+    test: 33
+  (4, 4, 'no'):
+    train: 0
+    valid_iid: 0
+    valid_ood: 100
+    test: 34
+  (5, 2, 'no'):
+    train: 0
+    valid_iid: 0
+    valid_ood: 100
+    test: 33
+  (5, 3, 'no'):
+    train: 0
+    valid_iid: 0
+    valid_ood: 100
+    test: 33
+  (5, 4, 'no'):
+    train: 0
+    valid_iid: 0
+    valid_ood: 100
+    test: 34
+  (6, 2, 'no'):
+    train: 0
+    valid_iid: 0
+    valid_ood: 100
+    test: 33
+  (6, 3, 'no'):
+    train: 0
+    valid_iid: 0
+    valid_ood: 100
+    test: 33
+  (6, 4, 'no'):
+    train: 0
+    valid_iid: 0
+    valid_ood: 100
+    test: 34

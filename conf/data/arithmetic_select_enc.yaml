@@ -1,0 +1,10 @@
+name: arithmetic_select_enc
+train_batch_size: 512
+eval_batch_size: 32
+eos: false
+sos: true
+specials_in_x: false
+splits:
+  - 'train'
+  - 'valid_iid'
+  - 'valid_ood'

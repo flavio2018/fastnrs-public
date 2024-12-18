@@ -1,0 +1,10 @@
+name: alltask_regr
+train_batch_size: 512
+eval_batch_size: 32
+eos: false
+sos: false
+specials_in_x: false
+splits:
+  - 'train'
+  - 'valid_iid'
+  - 'valid_ood'
